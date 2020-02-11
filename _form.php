@@ -29,10 +29,7 @@ use yii\bootstrap\ActiveForm;
     <?= $form->field($model, 'date_added')->textInput() ?>
 
     <?= $form->field($model, 'date_modified')->textInput() ?>
-	<hr>
-	<hr>
-	<hr>
-	<hr>
+	
     <?= $form->field($model, 'name')->textInput() ?>
 	                                                          
 	  <?= $form->field($model, 'filterArr')->checkboxList(\app\models\Filter::find()->select(['oc_filter_description.name'])->join('LEFT JOIN','oc_filter_description','oc_filter_description.filter_id=oc_filter.filter_id')->where(['oc_filter_description.language_id'=>1])->indexBy('oc_filter.filter_id')->column())?>
